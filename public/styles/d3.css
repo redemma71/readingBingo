@@ -1,0 +1,15 @@
+header {
+    width: 750px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#d3-body {
+    background-color: aquamarine;
+    height: 500px;
+}

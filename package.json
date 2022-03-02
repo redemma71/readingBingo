@@ -1,0 +1,42 @@
+{
+  "name": "bingo",
+  "version": "1.0.0",
+  "description": "Reading Bingo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch",
+    "dev-server": "webpack-dev-server",
+    "backend": "node src/server.cjs"
+  },
+  "keywords": [
+    "bingo",
+    "reading"
+  ],
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "d3": "^7.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.3",
+    "live-server": "^1.2.1",
+    "mongodb": "^4.2.2",
+    "mongoose": "^6.1.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "requirejs": "^2.3.6",
+    "webpack": "^5.69.1",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "author": "Chad David Cover",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  }
+}
