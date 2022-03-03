@@ -5,7 +5,8 @@ module.exports = {
    entry: './src/app.js',
    output: {
       path: path.join(__dirname,'public'),
-      filename: 'bundle.js' 
+      filename: 'bundle.js',
+      publicPath: '/'
    },
    module: {
        rules: [{
@@ -17,6 +18,7 @@ module.exports = {
    },
    devtool: 'eval-cheap-module-source-map',
    devServer: {
+      historyApiFallback: true,
       hot: true,
       static: {
          directory: path.join(__dirname, 'public'),

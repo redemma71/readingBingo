@@ -3,6 +3,7 @@ import { Star } from '../../utils/Star';
 import { categories2022 } from '../../data/bookCategories.cjs';
 import { chooseCategories } from '../../utils/categoryUtils.cjs';
 import { colorClass, xCoords } from '../../data/readingBingoSettings';
+import NavBar from '../NavBar/NavBar';
 
 class BingoSheet extends Component {
 
@@ -38,7 +39,7 @@ class BingoSheet extends Component {
             }
         }
 
-        let bingoSheet = d3.select("#yadda");
+        let bingoSheet = d3.select("#sheetContent");
         
         let bingoSquare = bingoSheet.append("svg")
             .attr("height", height)
@@ -122,7 +123,13 @@ class BingoSheet extends Component {
     }
 
     render() {
-        return <div id="yadda"></div>
+        return (
+            <div id="sheet">
+                <NavBar />
+                <div id="sheetContent"></div>
+            </div>
+        )
+
     }
 
 }

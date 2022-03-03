@@ -1,6 +1,7 @@
-const db  = require('../models/index.cjs');
+const db = require('../models/index.cjs');
 const Player = db.players;
-const categories = require('../data/bookCategories.cjs');
+const { categories2022 } = require('../data/bookCategories.cjs');
+const { chooseCategories } = require('../utils/categoryUtils.cjs');
 
     exports.create = (req, res) => {
         if (!req.body.name) {
@@ -12,7 +13,7 @@ const categories = require('../data/bookCategories.cjs');
 
         const player = new Player({
             name: req.body.name,
-            categories: ["eanie","meanie","minie","moe"]
+            categories: [chooseCategories(categories2022)]
         });
 
         player.save(player)

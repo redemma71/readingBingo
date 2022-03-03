@@ -1,20 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReadingBingo from '../ReadingBingo/ReadingBingo';
+import NavBar from '../NavBar/NavBar';
 
-export default class LoginForm extends React.Component {
+class LoginForm extends React.Component {
     state = {
         name: undefined,
         display: true
     }
 
     componentDidMount() {
-        const name = localStorage.getItem('name');
-        if (name) {
-            this.setState(() => ({
-                display: false,
-                name: name,
-            }));
-        }
+        // const name = localStorage.getItem('name');
+        // if (name) {
+        //     this.setState(() => ({
+        //         display: false,
+        //         name: name,
+        //     }));
+        // }
     };
 
     logUserIn = (event) => {
@@ -28,17 +30,20 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div id="user-login">
+                <NavBar />
                 {this.state.display ?
-                <form onSubmit={this.logUserIn}>
-                    <label htmlFor="firstName">First name:</label>
-                    <input type="text" name="firstName" id="firstName" />
-                    <p>Type of account:</p>
-                    <input type="radio" id="adult" name="accountType" value="adult" />
-                    <label htmlFor="adult">Adult</label>
-                    <input type="radio" id="child" name="accountType" value="child" />
-                    <label htmlFor="child">Child</label><br />
-                    <button>{this.props.buttonText}</button>
-                </form>
+                <div id="user-login-form">
+                    <form onSubmit={this.logUserIn}>
+                        <label htmlFor="firstName">First name:</label>
+                        <input type="text" name="firstName" id="firstName" />
+                        <p>Type of account:</p>
+                        <input type="radio" id="adult" name="accountType" value="adult" />
+                        <label htmlFor="adult">Adult</label>
+                        <input type="radio" id="child" name="accountType" value="child" />
+                        <label htmlFor="child">Child</label><br />
+                        <button>{this.props.buttonText}</button>
+                    </form>
+                </div>
                 :
                 <div>
                     <h3>Welcome back, {this.state.name}!</h3>
@@ -49,3 +54,5 @@ export default class LoginForm extends React.Component {
         )
     }
 }
+
+export default LoginForm;

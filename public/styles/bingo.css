@@ -13,6 +13,10 @@ h1, h2 {
     margin-bottom: 50px;
 }
 
+#sheetContent, #user-login-form {
+    margin-top: 35px;
+}
+
 #readingBingo {
     margin-left: 20px;
 }

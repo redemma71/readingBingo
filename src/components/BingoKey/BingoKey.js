@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { categories2022 as categories } from '../../data/bookCategories.cjs';
+import NavBar from '../NavBar/NavBar';
 
 class BingoKey extends Component { 
     
@@ -12,7 +13,7 @@ class BingoKey extends Component {
       }
 
     createKey = (categories) => {
-        let bingoKeyBody = document.getElementById("key");
+        let bingoKeyBody = document.getElementById("keyContent");
         let headerElement = document.createElement("header");
         let h1Element = document.createElement("h1");
         let headerText = document.createTextNode("Reading Bingo Key");
@@ -33,7 +34,13 @@ class BingoKey extends Component {
     }
 
     render() {
-        return <div id="key"></div> 
+        return  (
+            <div id="key">
+                <NavBar />
+                <div id="keyContent"></div>
+            </div>
+        )
+         
     }
 }
 

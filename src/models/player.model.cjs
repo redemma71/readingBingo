@@ -4,7 +4,7 @@ module.exports = mongoose => {
         mongoose.Schema(
             {
                 name: String,
-                categories: [String],
+                categories: Object,
             },
             { timestamps: true }
         )
