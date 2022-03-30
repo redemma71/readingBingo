@@ -12,6 +12,7 @@ class ReadingBingo extends Component {
         super(props);
         this.logUserIn = this.logUserIn.bind(this);
         this.logUserOut = this.logUserOut.bind(this);
+        this.registerUser = this.registerUser.bind(this);
         this.state = {
             logging: 'dev',
             name: undefined,
@@ -52,7 +53,6 @@ class ReadingBingo extends Component {
             );
         };
 
-
         if (accountType) {
             this.setState( () =>  (
                 { 
@@ -65,13 +65,12 @@ class ReadingBingo extends Component {
                     accountType: "adult"
                 })
             );
-        };
-        
-    }
+        };  
+    };
 
     componentDidUpdate() {
         if (this.state.debug) console.log("ReadingBingo did update.");
-    }
+    };
 
     getUserInformation(name) {
         let requestUrl = `http://localhost:4243/find/${name}`;
@@ -115,6 +114,37 @@ class ReadingBingo extends Component {
     };
 
 
+    addUser(name,accountType) {
+        let requestUrl = `http://localhost:4243/create`;
+        return fetch(requestUrl, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              method: "POST",
+              body: JSON.stringify(
+                  {
+                    name: name,
+                    accountType: accountType 
+                }
+                
+            )
+        })
+        .then( (res) => {
+            return res.json();
+        });
+    };
+
+    async registerUser(event) {
+        if (this.state.debug) console.log('logging user in');
+        event.preventDefault();
+        const name = event.target.elements.name.value.trim();
+        const accountType = event.target.elements.accountType.value;
+        let user = await this.addUser(name, accountType);
+        
+    }
+
+
     logUserOut = (event) => {
         if (this.state.debug) console.log('logging user out');
         localStorage.clear();
@@ -152,7 +182,7 @@ class ReadingBingo extends Component {
                     <NavBar name={this.state.name} debug-mode={this.state.debug} logout={this.logUserOut} />
                     <Routes>
                         <Route exact path="/" element={<WelcomePage name={this.state.name} loggedIn={this.state.isLoggedIn} login={this.logUserIn} logging={this.state.logging}/>} />
-                        <Route exact path="/register" element={<RegistrationPage name={this.state.name} logging={this.state.logging} />} />
+                        <Route exact path="/register" element={<RegistrationPage name={this.state.name} register={this.registerUser} logging={this.state.logging} />} />
                         <Route exact path="/login" element={<LoginPage name={this.state.name} login={this.logUserIn} />} />
                         <Route exact path="/sheet" element={<BingoSheet name={this.state.name} loggedIn={this.state.isLoggedIn} logging={this.state.logging}/>} />
                         <Route exact path="/key" element={<BingoKey name={this.state.name} loggedIn={this.state.isLoggedIn} logging={this.state.logging}/>} />
