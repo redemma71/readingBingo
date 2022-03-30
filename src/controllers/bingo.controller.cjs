@@ -1,9 +1,11 @@
 const db = require('../models/index.cjs');
-const Player = db.players;
-const { categories2022 } = require('../data/bookCategories.cjs');
+const Player = require('../models/player.model.cjs');
+const categories2022 = require('../data/bookCategories.json');
 const { chooseCategories } = require('../utils/categoryUtils.cjs');
 
-    exports.create = (req, res) => {
+    // create a player
+    module.exports.create = (req, res) => {
+        console.log(chooseCategories(categories2022.categories2022));
         if (!req.body.name) {
             res.status(400).send(
                 {message: "Please enter a name." }
@@ -13,7 +15,7 @@ const { chooseCategories } = require('../utils/categoryUtils.cjs');
 
         const player = new Player({
             name: req.body.name,
-            categories: [chooseCategories(categories2022)]
+            categories: chooseCategories(categories2022.categories2022)
         });
 
         player.save(player)
@@ -29,8 +31,9 @@ const { chooseCategories } = require('../utils/categoryUtils.cjs');
     };
 
     // retrieve all players
-    exports.findAll = (req, res) => {
+    module.exports.findAll = (req, res) => {
         const name = req.query.name;
+        console.log(req.query.name);
         let condition = name ? { name: {$regex: new RegExp(name), $options: "i"}} : {};
 
         Player.find(condition)
@@ -47,8 +50,8 @@ const { chooseCategories } = require('../utils/categoryUtils.cjs');
 
 
     // retrieve player by name
-    exports.findOne = (req, res) => {
-        const name = req.body.name;
+    module.exports.findOne = (req, res) => {
+        const name = req.params.name;
         let condition = name ? { name: {$regex: new RegExp(name), $options: "i"}} : {};
 
         Player.find(condition)
@@ -63,4 +66,21 @@ const { chooseCategories } = require('../utils/categoryUtils.cjs');
                 .send(
                     {"message": "Error finding " + name + ". Please try again."});
             });
+    };
+
+module.exports.update = (req, res) => {
+    const name = req.params.name;
+    let condition = name ? { name: {$regex: new RegExp(name), $options: "i"}} : {};
+
+    Player.update(condition)
+        .then(data => {
+            if (!data) {
+                res.status(404).send( {"message": `Error finding ${name}. Please try again.`});
+            }
+        })
+        .catch(err => {
+            res.status(500)
+            .send(
+                {"message": `Error finding ${name}. Please try again.`});
+        });
     };

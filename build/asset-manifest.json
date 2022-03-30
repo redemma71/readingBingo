@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.91ea9a83.css",
+    "main.js": "/static/js/main.47b37554.js",
+    "static/js/787.fef8d27d.chunk.js": "/static/js/787.fef8d27d.chunk.js",
+    "static/media/rubik-italic-webfont.woff": "/static/media/rubik-italic-webfont.05bbadfd04ce82492256.woff",
+    "static/media/rubik-regular-webfont.woff": "/static/media/rubik-regular-webfont.323144d3e2b3dba2d9fd.woff",
+    "static/media/rubik-bold-webfont.woff": "/static/media/rubik-bold-webfont.b824d7ec6755cc662416.woff",
+    "static/media/rubik-italic-webfont.woff2": "/static/media/rubik-italic-webfont.169ffe685c1af78ed7a5.woff2",
+    "static/media/rubik-regular-webfont.woff2": "/static/media/rubik-regular-webfont.6a78d8c306b04db9208e.woff2",
+    "static/media/rubik-bold-webfont.woff2": "/static/media/rubik-bold-webfont.73d2cfce71edc9e2a332.woff2",
+    "index.html": "/index.html",
+    "main.91ea9a83.css.map": "/static/css/main.91ea9a83.css.map",
+    "main.47b37554.js.map": "/static/js/main.47b37554.js.map",
+    "787.fef8d27d.chunk.js.map": "/static/js/787.fef8d27d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91ea9a83.css",
+    "static/js/main.47b37554.js"
+  ]
+}

@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import { categories2022 as categories } from '../../data/bookCategories.cjs';
-import NavBar from '../NavBar/NavBar';
+import categories2022 from '../../data/bookCategories.json';
 
 class BingoKey extends Component { 
+    constructor(props) {
+        super(props);
+    }
     
     componentDidMount() {
-        this.createKey(categories);
+        if (this.props.logging === "dev") console.log('BingoKey did mount');
+        this.createKey(categories2022.categories2022);
     }
 
     sortByLabel = (x,y)  => {
@@ -36,7 +39,6 @@ class BingoKey extends Component {
     render() {
         return  (
             <div id="key">
-                <NavBar />
                 <div id="keyContent"></div>
             </div>
         )

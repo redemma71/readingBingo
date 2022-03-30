@@ -1,43 +1,71 @@
 {
-  "name": "bingo",
-  "version": "1.0.0",
-  "description": "Reading Bingo",
-  "main": "app.js",
+  "name": "reading-bingo",
+  "version": "0.1.0",
+  "main": "index.cjs",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --watch",
-    "dev-server": "webpack-dev-server",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "backend": "node src/server.cjs"
   },
-  "keywords": [
-    "bingo",
-    "reading"
-  ],
   "dependencies": {
+    "@strongdm/glyphicon": "0.0.5",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "body-parser": "^1.19.1",
+    "body-parser": "^1.19.2",
+    "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
+    "css-loader": "^6.7.1",
     "d3": "^7.3.0",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "live-server": "^1.2.1",
-    "mongodb": "^4.2.2",
-    "mongoose": "^6.1.4",
+    "mongod": "^2.0.0",
+    "mongoose": "^6.2.7",
+    "node-fetch": "^3.2.3",
+    "node-loader": "^2.0.0",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.2.2",
     "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4",
     "react-router-dom": "^6.2.2",
-    "requirejs": "^2.3.6",
-    "webpack": "^5.69.1",
+    "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.70.0",
     "webpack-dev-server": "^4.7.4"
   },
-  "author": "Chad David Cover",
-  "license": "MIT",
-  "devDependencies": {
-    "webpack-cli": "^4.9.2"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

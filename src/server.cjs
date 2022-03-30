@@ -3,7 +3,7 @@ const router = express.Router;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const {create, findAll, findOne} = require('./controllers/bingo.controller.cjs');
+const {create, findAll, findOne, update} = require('./controllers/bingo.controller.cjs');
 // require("dotenv").config({ path: "conf/config.env" });
 
 /* 
@@ -45,11 +45,10 @@ app.get('/', (req, res) => {
   res.json({"route":"/","working":false});
 });
 
-
-
 app.get('/findAll', findAll);
 app.post('/create', create);
-app.get('/find', findOne);
+app.get('/find/:name', findOne);
+app.post('/update/:name', update);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 4243;

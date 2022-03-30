@@ -1,0 +1,29 @@
+@import '../components/NavBar/NavBar';
+@import '../components/BingoSheet//BingoSheet';
+@import '../components/BingoKey/BingoKey';
+@import '../components/LoginForm/LoginForm';
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: graysle;
+  background-color: aliceblue;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header {
+  width: 750px;
+}
+
+h1, h2, h3, p {
+  font-family: 'rubikregular';
+}
+
+h1, h2 {
+  color: #000000;
+  text-align: center;
+}
