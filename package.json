@@ -32,6 +32,7 @@
     "express": "^4.17.3",
     "mongod": "^2.0.0",
     "mongoose": "^6.2.7",
+    "mongoose-bcrypt": "^1.10.0",
     "node-fetch": "^3.2.3",
     "node-loader": "^2.0.0",
     "normalize.css": "^8.0.1",

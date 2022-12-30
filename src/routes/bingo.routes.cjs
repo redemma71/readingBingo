@@ -12,5 +12,5 @@ module.exports = app => {
     router.get("/player", players.findOne);
 
     // path
-    app.use('/api/bingo', router);
+    // app.use('/api/bingo', router);
 };

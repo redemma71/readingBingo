@@ -23,6 +23,14 @@ class LoginForm extends Component {
                                     </p>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <label htmlFor="password">Password:&nbsp;&nbsp;</label>
+                                        <input type="password" name="password" id="password" />
+                                    </p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <button>Login</button>

@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -11,7 +10,7 @@ const {create, findAll, findOne, update} = require('./controllers/bingo.controll
 */
 const app = express();
 var corsOptions = {
-  origin: "http://localhost:4243"
+  origin: "http://localhost:3000"
 };
 
 // connect to mongodb
@@ -42,16 +41,16 @@ app.use('/bingo', express.static(path.join(__dirname, '../public/')));
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
-  res.json({"route":"/","working":false});
+  res.json({"route":"/","working":true, "message":"hello world"});
 });
 
 app.get('/findAll', findAll);
 app.post('/create', create);
-app.get('/find/:name', findOne);
-app.post('/update/:name', update);
+app.post('/find', findOne);
+app.post('/update', update);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 4243;
+const PORT = process.env.PORT || 4200;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

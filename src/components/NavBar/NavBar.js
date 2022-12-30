@@ -19,6 +19,12 @@ const NavBar = (props) => {
                             <Nav.Link className="navLink" href="/key">Bingo Key</Nav.Link>
                     </Nav.Item>
                     }
+                    {
+                        props.name &&
+                        <Nav.Item>
+                            <Nav.Link className="navLink" href="/picks">My Picks</Nav.Link>
+                        </Nav.Item>
+                    }
                     <span className="glyphs">
                         <Nav.Item>
                             <Glyphicon glyph="user"> {props.name ? props.name : "anonymous"}</Glyphicon>

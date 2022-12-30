@@ -39,7 +39,7 @@ class BingoSheet extends Component {
             "header-square", "header-square", "header-square", "header-square", "header-square",
             "square0", "square1", "square2", "square3", "square4",  
             "square1", "square2", "square3", "square4", "square0",
-            "square2", "square3", "square4", "square0", "square1",
+            "square2", "square3", "squareF", "square0", "square1",
             "square3", "square4", "square0", "square1", "square2",
             "square4", "square0", "square1", "square2", "square3"];
 
@@ -86,7 +86,9 @@ class BingoSheet extends Component {
             .text((d, i) => {
                 if (i !== 17) { // skip the middle square
                     return d.label
-                } 
+                } else {
+                    return "FREE SPACE"
+                }
             })
             .attr("x", (d, i) => {
                 return getXCoord(i) + (150 - d.label.length) / 2 
@@ -101,10 +103,13 @@ class BingoSheet extends Component {
             .attr("class", (d, i) => {
                 if (i < 5) {
                     return "bingo-text"
+                } else if (i === 17) {
+                    return "free-space-text"
                 } else {
                     return "category-text"
                 }
             })
+            .style("color", "red")
             .style("text-anchor", "middle");
     }
 
