@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const {create, findAll, findOne, update} = require('./controllers/bingo.controller.cjs');
-// require("dotenv").config({ path: "conf/config.env" });
 
 /* 
     Set up the app
@@ -22,6 +21,8 @@ db.mongoose
   })
   .then(() => {
     console.log("Connected to the database!");
+    console.log(`${process.env.BOOYA}`);
+    console.log(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@localhost:27017/bingo`);
   })
   .catch(err => {
     console.log("Cannot connect to the database!", err);
