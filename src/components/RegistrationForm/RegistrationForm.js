@@ -44,11 +44,11 @@ class RegistrationForm extends Component {
                             <tr>
                                 <td>
                                     <p>Account Type:&nbsp;&nbsp;
-                                        <input type="radio" id="adult" name="accountType" value="adult"></input>
-                                        <label htmlFor="adult">Adult&nbsp;&nbsp;&nbsp;</label>
-                                        <input type="radio" id="teen" name="accountType" value="teen"></input>
-                                        <label htmlFor="child">Teen/Tween&nbsp;&nbsp;&nbsp;</label>
-                                        <input type="radio" id="child" name="accountType" value="child"></input>
+                                        <input type="radio" id="adult" name="accountType" value="adult"></input>&nbsp;
+                                        <label htmlFor="adult">Adult</label>&nbsp;&nbsp;
+                                        <input type="radio" id="teen" name="accountType" value="teen"></input>&nbsp;
+                                        <label htmlFor="child">Teen/Tween</label>&nbsp;&nbsp;
+                                        <input type="radio" id="child" name="accountType" value="child"></input>&nbsp;
                                         <label htmlFor="child">Child</label>
                                     </p>
                                 </td>
