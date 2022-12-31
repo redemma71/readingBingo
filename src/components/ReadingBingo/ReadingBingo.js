@@ -81,7 +81,7 @@ class ReadingBingo extends Component {
     };
 
     getUserInformation(name,password) {
-        let requestUrl = `http://localhost:4200/find`;
+        let requestUrl = `http://localhost:4300/find`;
         return fetch(requestUrl, {
             headers: {
                 'Accept': 'application/json',
@@ -141,7 +141,7 @@ class ReadingBingo extends Component {
 
 
     addUser(name,email,accountType,password) {
-        let requestUrl = `http://localhost:4200/create`;
+        let requestUrl = `http://localhost:4300/create`;
         return fetch(requestUrl, {
             headers: {
                 'Accept': 'application/json',

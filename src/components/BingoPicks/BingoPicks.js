@@ -22,7 +22,7 @@ class BingoPicks extends Component {
     }
 
     updateUser(name,picks) {
-        let requestUrl = `http://localhost:4200/update`;
+        let requestUrl = `http://localhost:4300/update`;
         return fetch(requestUrl, {
             headers: {
                 'Accept': 'application/json',
