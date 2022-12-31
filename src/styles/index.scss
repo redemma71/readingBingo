@@ -19,11 +19,29 @@ header {
   width: 750px;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, ol, li {
   font-family: 'rubikregular';
 }
 
+li {
+  font-size: 24px;
+}
+
 h1, h2 {
-  color: #000000;
-  text-align: center;
+  color: darkblue;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#user-login-form {
+  font-size: 24px;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }

@@ -1,6 +1,6 @@
 const db = require('../models/index.cjs');
 const Player = require('../models/player.model.cjs');
-const categories2022 = require('../data/bookCategories.json');
+const categories = require('../data/bookCategories.json');
 const { chooseCategories } = require('../utils/categoryUtils.cjs');
 const { Alert } = require('react-bootstrap');
 
@@ -40,7 +40,7 @@ module.exports.create = (req, res) => {
                 email: email,
                 accountType: accountType,
                 password: password,
-                categories: chooseCategories(categories2022.categories2022)
+                categories: chooseCategories(categories.categories2023)
             });
     
             player.save(player)
@@ -97,13 +97,13 @@ module.exports.findOne = (req, res) => {
             } else {
                 data[0].verifyPassword(password, function(err, valid) {
                     if (err) {
-                      console.log(err)
+                      //console.log(err)
                       res.status(404).send({"message": err});
                     } else if (valid) {
-                      console.log('Valid (callback)');
+                      // console.log('Valid (callback)');
                       res.send(data); 
                     } else {
-                      console.log('Invalid (callback)');
+                      // console.log('Invalid (callback)');
                       res.status(404).send({"message": "username/password error"});
                     }
                   });

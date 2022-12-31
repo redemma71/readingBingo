@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import categories2022 from '../../data/bookCategories.json';
+import categories from '../../data/bookCategories.json';
 
 class BingoKey extends Component { 
     constructor(props) {
@@ -8,7 +8,7 @@ class BingoKey extends Component {
     
     componentDidMount() {
         if (this.props.logging === "dev") console.log('BingoKey did mount');
-        this.createKey(categories2022.categories2022);
+        this.createKey(categories.categories2023);
     }
 
     sortByLabel = (x,y)  => {
@@ -19,7 +19,7 @@ class BingoKey extends Component {
         let bingoKeyBody = document.getElementById("keyContent");
         let headerElement = document.createElement("header");
         let h1Element = document.createElement("h1");
-        let headerText = document.createTextNode("Reading Bingo Key");
+        let headerText = document.createTextNode("Bingo Key");
         h1Element.appendChild(headerText);
         headerElement.appendChild(h1Element);
         bingoKeyBody.appendChild(headerElement);

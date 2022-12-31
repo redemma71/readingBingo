@@ -87,7 +87,7 @@ class BingoSheet extends Component {
                 if (i !== 17) { // skip the middle square
                     return d.label
                 } else {
-                    return "FREE SPACE"
+                    // do nothing
                 }
             })
             .attr("x", (d, i) => {
@@ -111,9 +111,10 @@ class BingoSheet extends Component {
             })
             .style("color", "red")
             .style("text-anchor", "middle");
-    }
-
-    drawStar(selection) {
+    
+    
+        // drawStar(selection) {
+        // draw a star in the free space
         let x = 320;
         let y = 320;
         let size = 100;
@@ -158,6 +159,7 @@ class BingoSheet extends Component {
             //border of the star
             selection.append("path").attr("d", line(coordinates))
                 .style({ "stroke-width": borderWidth, "fill": "none", "stroke": borderColor});
+
     }
 
     drawSheet() {

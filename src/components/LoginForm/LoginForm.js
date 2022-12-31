@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class LoginForm extends Component {
     render() {
         return (
             <div id="user-login-form">
-                <form onSubmit={this.props.login}>
+                <Form onSubmit={this.props.login}>
                     <table>
                         <tbody>
                             <tr>
@@ -33,8 +34,8 @@ class LoginForm extends Component {
                             </tr>
                         </tbody>
                     </table>
-                    <button>Login</button>
-                </form>
+                    <Button className="btn btn-primary" type="submit">Login</Button>
+                </Form>
             </div>
         );
     }

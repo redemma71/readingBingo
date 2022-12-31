@@ -6,7 +6,7 @@ import { Button, Grid, Row, Col, Nav } from 'react-bootstrap';
 const NavBar = (props) => {
 
     return (
-        <div className="navBar">
+        <div className="navBar no-print">
             <span>
                 <Nav className="navBar">
                     <Nav.Item>

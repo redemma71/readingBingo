@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import "./RegistrationPage.css";
 
 class RegistrationPage extends Component {
     constructor(props) {
@@ -14,9 +15,9 @@ class RegistrationPage extends Component {
     render() {
         return (
             <div id="registration-form">
-                <h3>Register for Reading Bingo</h3>
+                <h1>Register for Reading Bingo</h1>
                 <RegistrationForm register={this.props.register} />
-                <span className="register">[Already Registered? <Link to="/login">Login</Link>]</span>
+                <div className="login"><span>[Already Registered? <Link to="/login">Login</Link>]</span></div>
             </div>
         );
     }

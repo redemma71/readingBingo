@@ -1,5 +1,5 @@
-{ "categories2022" :  
-    [
+{ 
+    "categories2023" : [
         { "label": "Animals", "description": "A book about animals", "category": "both" },
         { "label": "Food", "description": "A book about food", "category": "adult" },
         { "label": "Global Story", "description": "A book based outside the USA", "category": "both" },
@@ -11,7 +11,7 @@
         { "label": "Adventure", "description": "A book about an adventure", "category": "both" },
         { "label": "Audio Book", "description": "An audio book", "category": "both" },
         { "label": "Award Winner", "description": "A book that has won an award", "category": "both" },
-        { "label": "Bestseller", "description": "A 2021 best-selling book", "category": "both" },
+        { "label": "Bestseller", "description": "A 2022 best-selling book", "category": "both" },
         { "label": "Biography", "description": "A biographical book", "category": "both" },
         { "label": "Bottom of List", "description": "A book on the bottom of your reading list or bookshelf", "category": "adult" },
         { "label": "Childhood Fave", "description": "A book that is a childhood favorite", "category": "adult" },
@@ -38,7 +38,6 @@
         { "label": "Fresh Pick", "description": "A book published this year", "category": "both" },
         { "label": "Librarian's Pick", "description": "A book recommended by a librarian", "category": "both" },
         { "label": "Birth Year", "description": "A book published the year you were born", "category": "both" },
-        { "label": "LGBTQ+ Book", "description": "A book about the LGBTQ+ community, experience, or history", "category": "both" },
         { "label": "Sports Book", "description": "A book about sports, athlete, or team", "category": "both" },
         { "label": "Good v. Evil", "description": "A book with a theme about \"good\" versus \"evil\"", "category": "both" },
         { "label": "Magazine", "description": "Read a magazine", "category": "child"},
@@ -46,6 +45,7 @@
         { "label": "In the Present", "description": "A book with a setting in the present", "category": "child"},
         { "label": "Favorite Color", "description": "A book cover in your favorite color", "category": "child"},
         { "label": "One-word Title", "description": "A book with a one-word title", "category": "child"},
-        { "label": "First novel", "description": "An author's first novel", "category": "child"}
-    ]
+        { "label": "First novel", "description": "An author's first novel", "category": "child"}],
+    "categories2024" : [
+        { "label": "LGBTQ+ Book", "description": "A book about the LGBTQ+ community, experience, or history", "category": "both" }]
 }

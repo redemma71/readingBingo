@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "babel-polyfill";
 import { local } from 'd3';
 import './BingoPicks.css';
+import { Form, Button } from 'react-bootstrap';
 
 
 class BingoPicks extends Component {
@@ -56,7 +57,7 @@ class BingoPicks extends Component {
         if (!(picks instanceof Array)) {
             picks = [];
         }
-        
+       
         let previousPickIndexes = [];
         picks.forEach(prevPick => {
             previousPickIndexes.push(prevPick.number);
@@ -70,13 +71,15 @@ class BingoPicks extends Component {
             remainingCategories.splice(pickIndex, 1);
         });
 
-        let index = Math.floor(Math.random() * remainingCategories.length);
-        let now = Date.now();
-        let pick = {"date": now, "number": index, "label": remainingCategories[index].label};
-        picks.push(pick);
-        localStorage.setItem("picks",JSON.stringify(picks));
-        let name = localStorage.getItem("name");     
-        await this.updateUser(name, picks);
+        if (remainingCategories.length > 0) {
+            let index = Math.floor(Math.random() * remainingCategories.length);
+            let now = Date.now();
+            let pick = {"date": now, "number": index, "label": remainingCategories[index].label};
+            picks.push(pick);
+            localStorage.setItem("picks",JSON.stringify(picks));
+            let name = localStorage.getItem("name");     
+            await this.updateUser(name, picks);
+        }
     };
 
 
@@ -96,44 +99,44 @@ class BingoPicks extends Component {
         }
     };
 
-    hasPicked() {
-        let picks;
-        let hasPicked;
-        let lastPick;
-        if (!localStorage['picks']) {
-            picks = [];
-            hasPicked = false;
-        } else {
-            picks = JSON.parse(localStorage['picks']);
-            lastPick = picks[picks.length - 1];
-            let monthOfPick = new Date(lastPick.date).toLocaleString('default', { month: 'long' });
-            let monthRightNow = new Date(Date.now()).toLocaleString('default', { month: 'long'});
-            if (monthOfPick == monthRightNow) {
-                this.setState({hasPicked: true});
-            }
-        }           
-    }
+    // TODO
+    hasPicked(picks) {
+            let lastPick;
+            if (picks.length != 0) {
+                picks = JSON.parse(localStorage['picks']);
+                lastPick = picks[picks.length - 1];
+                let monthOfPick = new Date(lastPick.date).toLocaleString('default', { month: 'long' });
+                let monthRightNow = new Date(Date.now()).toLocaleString('default', { month: 'long'});
+                if (monthOfPick == monthRightNow) {
+                    this.setState({hasPicked: true});
+                }
+                return true;
+            }           
+            return false;
+    };
 
     render() {
         return (
                 <div id="bingo-picks">
                     <div id="make-a-pick">
                         <h1>My Picks</h1>
-                        <form onSubmit={this.pickACategory}>
-                            { !this.state.hasPicked ?
-                                <button>Pick my Book</button> :
-                                <button disabled="true">Pick my Book</button>
-                            
-                            }
-                        </form>
+                        <Form onSubmit={this.pickACategory}>
+                            <Button className="btn btn-primary" type="submit">Pick my Book</Button>
+                        </Form>
                         { this.showNewPick() ? 
                             <div id="picks">
                                 <div id="picks-content">
+                                    <ol>
                                     {this.displayPick("all").map((pick,index)=>(
+                                        
                                         <div key={index}>
-                                        <h3>{new Date(pick.date).toLocaleString('default', { month: 'long' })}: {pick.label}</h3>
+                                        <li>
+                                        {new Date(pick.date).toLocaleString('default', { month: 'long' })}: {pick.label}
+                                        </li>
                                         </div>
+                                        
                                     ))}
+                                    </ol>
                                 </div>  
                             </div> : 
                             <div className="new-pick">Please pick a category.</div>

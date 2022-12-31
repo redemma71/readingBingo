@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { Link } from 'react-router-dom';
+import "./LoginPage.css";
 
 class LoginPage extends Component {
     constructor(props) {
@@ -18,9 +19,9 @@ class LoginPage extends Component {
     render() {
         return (
             <div id="user-login">
-                 <h3>Welcome to Reading Bingo!</h3>
+                 <h1>Welcome to Reading Bingo!</h1>
                 <LoginForm login={this.props.login} />
-                <span className="register">[Not Registered? <Link to="/register">Register</Link>]</span>
+                <div className="register"><span>[Not Registered? <Link to="/register">Register</Link>]</span></div>
             </div>
         )
     }
